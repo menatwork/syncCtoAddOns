@@ -226,6 +226,12 @@ class SyncCtoAddOns
 		$this->intClientId = $intClientID;
 		$this->arrTables   = $arrSyncTables;
 
+		// Check if we have a config.
+		if (!is_array($GLOBALS['SYNCCTO_ADDONS']['syncDBUpdateBeforeDrop']) || empty($GLOBALS['SYNCCTO_ADDONS']['syncDBUpdateBeforeDrop']))
+		{
+			return $arrLastSQL;
+		}
+
 		foreach ($GLOBALS['SYNCCTO_ADDONS']['syncDBUpdateBeforeDrop'] as $strCustomName => $arrSettings)
 		{
 			if (!$this->isCurrentEventValid($arrSettings, $intClientID, $arrSyncTables))

@@ -9,10 +9,10 @@
  * @filesource
  */
 
+
 /**
- * syncDBUpdateBeforeDrop
+ * Config
  */
-$GLOBALS['TL_HOOKS']['syncDBUpdateBeforeDrop'][] = array('SyncCtoAddOns', 'updateBeforeDrop');
 
 $GLOBALS['SYNCCTO_ADDONS']['syncDBUpdateBeforeDrop']['unpublished_root'] = array
 (
@@ -22,6 +22,8 @@ $GLOBALS['SYNCCTO_ADDONS']['syncDBUpdateBeforeDrop']['unpublished_root'] = array
 	'pages'     => array(29, 30),
 );
 
+/**
+ * Add function to each hook.
+ */
 
-
-
+$GLOBALS['TL_HOOKS']['syncDBUpdateBeforeDrop'][] = array('SyncCtoAddOns', 'updateBeforeDrop');
